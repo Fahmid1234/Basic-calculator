@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="splash">
+        <div class="splash-content">
+            <h1>Calculator App</h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress"></div>
+            </div>
+        </div>
+    </div>
+    <div class="calculator">
+        <div class="inp">
+            <input type="text" id="res" placeholder="0">
+        </div>
+        <div class="btn">
+            <button class="bttn" onclick="insertnum(7)">7</button>
+            <button class="bttn" onclick="insertnum(8)">8</button>
+            <button class="bttn" onclick="insertnum(9)">9</button>
+            <button class="op" onclick="insertnum('/')">/</button>
+        </div>
+        <div class="btn">
+            <button class="bttn" onclick="insertnum(4)">4</button>
+            <button class="bttn" onclick="insertnum(5)">5</button>
+            <button class="bttn" onclick="insertnum(6)">6</button>
+            <button class="op" onclick="insertnum('*')">X</button>
+        </div>
+        <div class="btn">
+            <button class="bttn" onclick="insertnum(1)">1</button>
+            <button class="bttn" onclick="insertnum(2)">2</button>
+            <button class="bttn" onclick="insertnum(3)">3</button>
+            <button class="op" onclick="insertnum('-')">-</button>
+        </div>
+        <div class="btn">
+            <button class="bttn" onclick="insertnum(0)">0</button>
+            <button class="bttn" onclick="insertnum('.')">.</button>
+            <button class="bttn" onclick="del()">DEL</button>
+            <button class="op" onclick="insertnum('+')">+</button>
+        </div>
+        <div class="btn">
+            <button class="bttn" onclick="all_clr()">C</button>
+            <button class="btn2" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script>
+        // Simulate loading progress
+        let progress = 0;
+        const progressBar = document.getElementById('progress');
+        const loadingInterval = setInterval(() => {
+            progress += 1;
+            progressBar.style.width = `${progress}%`;
+            if (progress >= 100) {
+                clearInterval(loadingInterval);
+                // Hide the splash screen and show the calculator
+                document.querySelector('.splash').style.display = 'none';
+                document.querySelector('.calculator').style.display = 'block';
+            }
+        }, 100);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function insertnum(number) {
+            var num = $('#res').val()
+            $('#res').val(num + number)
+        }
+        function all_clr(){
+            $('#res').val('')
+        }
+        function del(){
+            var get_num = $('#res').val();
+            
+            if( get_num != ""){
+                $('#res').val(get_num.slice(0, -1));
+            }
+        }
+        function calculate(){
+            var equation = $("#res").val()
+            if(equation != ""){
+                $("#res").val(eval(equation))
+            }
+        }
+    </script>
+</body>
+</html>

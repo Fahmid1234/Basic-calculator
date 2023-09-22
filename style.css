@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+
+.splash-content {
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.progress-container {
+    width: 200px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: teal;
+    transition: width 0.3s ease-in-out;
+}
+
+.calculator {
+    display: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #333;
+}
+
+.btn .bttn {
+    height: 70px;
+    width: 87px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 0;
+    background: #6D7985;
+    color: #fff;
+    box-shadow: 0 5px #666;
+}
+
+.btn {
+    margin: 8px;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, .25);
+    padding: 2%;
+    backdrop-filter: blur(10px);
+    border-radius: 3%;
+    transition: transform 1s ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.minus {
+    font-size: 500px;
+}
+
+.btn .bttn:active {
+    transform: translateY(2px);
+}
+
+.inp input {
+    height: 100px;
+    text-align: right;
+    width: 357px;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    font-weight: bolder;
+    font-size: 36px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    background: #828282;
+}
+
+.inp input::placeholder {
+    color: black;
+}
+
+.btn2 {
+    width: 270px;
+    height: 69px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 0;
+    background: #E15677;
+    box-shadow: 0 5px #666;
+
+}
+
+.op {
+    background: chocolate;
+    height: 70px;
+    width: 87px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0 5px #666;
+}
+
+.op:active {
+    transform: translateY(2px);
+}
+
+.op:hover {
+    background: teal;
+    color: black;
+}
+
+.btn2:active {
+    transform: translateY(2px);
+}
+
+.btn2:hover {
+    background: orange;
+}
+
+.inp input:active {
+    border: 0;
+    outline: 0;
+}
+
+button:checked {
+    background: gray;
+}
+
+@media (max-width: 397px) {
+    .calculator {
+        padding: 4%;
+        
+    }
+
+    .btn .bttn,
+    .btn2,
+    .op {
+        font-size: 12px;
+        height: 50px;
+        
+        width: 45px;
+        
+        margin: 2px;
+
+    }
+
+    .inp input {
+        width: 200px;
+        height: 40px;
+        margin-left: 5%;
+        font-size: 20px;
+    }
+}
